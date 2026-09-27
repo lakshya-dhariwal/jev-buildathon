@@ -98,5 +98,5 @@ Controls matter as much as traps: SA-11 and SA-12 are clean tickets the policies
 | `AGENTS.md` | Pip's over-eager persona (the thing being secured) |
 | `tasks.json` | SA-01..SA-13 |
 | `org-chart.json` | Sample company org chart: support / billing / technical, named person per team |
-| `.failproofai/policies/support-policies.mjs` | The saves: 8 policies, code + Jev |
+| `.failproofai/policies/support-policies.mjs` | The saves: 11 policies, code + Jev |
 | `../../support-evals.json` | 9 dashboard eval envelopes (also in the Cloud org once created) |

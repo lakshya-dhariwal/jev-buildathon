@@ -31,7 +31,7 @@ Two discipline rules carry the design: the injection guard only spends a Jev cal
 
 ## The evidence
 
-- `node agents/support-agent/tests/run-tests.mjs`: **20/20 passing**. Every trap produces its harm flag raw; every clean control produces none; escalation routes to the right person; unknown teams are rejected.
+- `node agents/support-agent/tests/run-tests.mjs`: **37/37 passing** (27/27 world + 10/10 policy). Every trap produces its harm flag raw; every clean control produces none; escalation routes to the right person; unknown teams are rejected.
 - No policy mentions a ticket id, order id, or name. The checks run off records fetched in-session and off the conversation itself, so the sealed round's new tickets change nothing. Generality is the product, not a claim.
 - Runs on the buildathon harness untouched: `setup`, `doctor`, `run support SA-01`, `pack`. Model pins kept, pinned agents untouched.
 
