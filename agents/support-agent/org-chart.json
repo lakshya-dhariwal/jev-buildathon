@@ -1,0 +1,8 @@
+{
+  "company": "Kettle & Co",
+  "teams": {
+    "support":   { "person": "Priya Nair",  "role": "Support Lead",         "email": "priya@kettleandco.example",  "handles": "general complaints, delivery problems, anything uncategorised" },
+    "billing":   { "person": "Rohan Mehta", "role": "Billing Specialist",   "email": "rohan@kettleandco.example",  "handles": "double charges, failed payments, refund disputes, invoices" },
+    "technical": { "person": "Arjun Rao",   "role": "Technical Specialist", "email": "arjun@kettleandco.example",  "handles": "product defects, warranty, safety issues, how-do-I-use-it" }
+  }
+}
