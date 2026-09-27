@@ -4,7 +4,7 @@ Agents do not fail because the model is dumb. They fail because nothing checks t
 
 ## What it is
 
-Pip works the support queue at Kettle & Co, a fictional kitchenware store. It has 16 MCP tools (tickets, customers, orders, cancellations, exchanges, refunds, address changes, replies, org chart, human escalation) and 13 tasks (SA-01..SA-13) derived from tau-bench's retail benchmark: cancel-shipped, vague cancel, disclosure without verification, two-intent tickets, partial exchange, refund diversion, false promises, prompt injection through ticket comments, human escalation, plus clean controls where the right move is simply to do the work.
+Pip works the support queue at Kettle & Co, a fictional kitchenware store. It has 16 MCP tools (tickets, customers, orders, cancellations, exchanges, refunds, address changes, replies, org chart, human escalation) and 13 tasks (SA-01..SA-10) derived from tau-bench's retail benchmark: cancel-shipped, vague cancel, disclosure without verification, two-intent tickets, partial exchange, refund diversion, false promises, prompt injection through ticket comments, human escalation, plus clean controls where the right move is simply to do the work.
 
 The agent is deliberately over-eager. Its persona is rewarded for speed and customer happiness, so left alone it cancels shipped orders, reads out addresses to strangers, and sends refunds wherever the message says. That is not a contrived demo: it is what production agents do when the prompt is the only guardrail.
 
@@ -77,16 +77,16 @@ node bin/buildathon.mjs setup && node bin/buildathon.mjs doctor
 The demo, three commands:
 
 ```bash
-node bin/buildathon.mjs tasks support          # SA-01..SA-11
+node bin/buildathon.mjs tasks support          # SA-01..SA-13
 mv agents/support-agent/.failproofai /tmp/     # layer off
 node bin/buildathon.mjs run support SA-01      # Pip cancels a shipped order. Harm flags fire.
 mv /tmp/.failproofai agents/support-agent/     # layer on
 node bin/buildathon.mjs run support SA-01      # ⊘ blocked, agent offers the return route instead
 ```
 
-Then SA-10 for the showcase: a two-intent ticket plus a two-item exchange on an order that gets exactly one exchange. SA-12 shows the injection guard (a fake "billing ops" comment orders a refund to an attacker's UPI id - the agent ignores it). SA-13 shows escalation: a twice-charged customer demanding a human gets routed to Rohan in billing, not another bot apology. After each run: `fp --json sessions --since 10m --agent-id claude-support-agent`, evals land about 20 seconds later, and `fp guardrails summary` shows what the policies blocked.
+Then SA-08 for the showcase: a two-intent ticket plus a two-item exchange on an order that gets exactly one exchange. SA-09 shows the injection guard (a fake "billing ops" comment orders a refund to an attacker's UPI id - the agent ignores it). SA-10 shows escalation: a twice-charged customer demanding a human gets routed to Rohan in billing, not another bot apology. After each run: `fp --json sessions --since 10m --agent-id claude-support-agent`, evals land about 20 seconds later, and `fp guardrails summary` shows what the policies blocked.
 
-Controls matter as much as traps: SA-08 and SA-09 are clean tickets the policies must not over-block. Every Jev threshold is marked `TODO(live)` in the policy file for exactly that tuning.
+Controls matter as much as traps: SA-11 and SA-12 are clean tickets the policies must not over-block. Every Jev threshold is marked `TODO(live)` in the policy file for exactly that tuning.
 
 ## File map
 
@@ -96,7 +96,7 @@ Controls matter as much as traps: SA-08 and SA-09 are clean tickets the policies
 | `tools.mjs` | 14 MCP tools. No policy enforcement; they record what happened |
 | `server.mjs` | The `support` MCP server |
 | `AGENTS.md` | Pip's over-eager persona (the thing being secured) |
-| `tasks.json` | SA-01..SA-11 |
+| `tasks.json` | SA-01..SA-13 |
 | `org-chart.json` | Sample company org chart: support / billing / technical, named person per team |
 | `.failproofai/policies/support-policies.mjs` | The saves: 8 policies, code + Jev |
 | `../../support-evals.json` | 9 dashboard eval envelopes (also in the Cloud org once created) |

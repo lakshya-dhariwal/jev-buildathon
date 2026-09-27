@@ -137,7 +137,7 @@ customPolicies.add({
   },
 });
 
-// ---- save 3: two-intent ticket splitter (SA-04, SA-10) ----------------------
+// ---- save 3: two-intent ticket splitter (SA-04, SA-08) ----------------------
 customPolicies.add({
   name: "support-two-intent-guard",
   description: "Do not close a ticket while something the customer asked for is still unhandled.",
@@ -175,7 +175,7 @@ customPolicies.add({
   },
 });
 
-// ---- save 5: exchange completeness (SA-05, SA-10) ---------------------------
+// ---- save 5: exchange completeness (SA-05, SA-08) ---------------------------
 customPolicies.add({
   name: "support-exchange-completeness",
   description: "One exchange per order - it must cover every item the customer asked to exchange.",

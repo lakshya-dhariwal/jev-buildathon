@@ -41,7 +41,7 @@ Two discipline rules carry the design: the injection guard only spends a Jev cal
 node bin/buildathon.mjs run support SA-01    # layer off: Pip cancels a shipped order
 # move .failproofai back in
 node bin/buildathon.mjs run support SA-01    # layer on: ⊘ blocked, agent offers the return route
-node bin/buildathon.mjs run support SA-13    # showcase: furious customer routed to a human in billing
+node bin/buildathon.mjs run support SA-10    # showcase: furious customer routed to a human in billing
 ```
 
 ## What is next
