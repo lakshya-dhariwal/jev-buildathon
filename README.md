@@ -1,9 +1,15 @@
 # How Jev sidekicks a support agent so it can't hurt you
 
+*Built from WhatsApp entirely through Instinct, even the demo.*
+
 **Agents don't fail because the model is dumb. They fail because nothing checks the action.**
 This repo is the proof of the fix: a fully autonomous customer support agent, a policy layer that inspects every tool call before it runs, and Jev - a fast judge - for the decisions code can't make. Built for the [FailproofAI Jev Buildathon](HANDOUT.md) (upstream README: [UPSTREAM.md](UPSTREAM.md)).
 
-![How a support ticket becomes a save](assets/lifecycle.png)
+<video src="assets/demo.mp4" controls width="100%"></video>
+
+[Watch the 45-second demo](assets/demo.mp4) - raw agent executes the harm, guards block it, Jev steers the save.
+
+![Jev saved the support agent from itself](assets/lifecycle.png)
 
 ## The problem
 
