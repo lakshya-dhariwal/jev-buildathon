@@ -45,9 +45,12 @@ Tasks are tau-bench retail scenarios ported into the buildathon task format. Eva
 git clone -b support-agent https://github.com/lakshya-dhariwal/jev-buildathon.git
 cd jev-buildathon
 npm i -g failproofai@next
-failproofai config --token <team machine key>
-failproofai jev setup            # or: Jev token already configured - check `failproofai jev status`
-failproofai jev test             # one live Jev request; the semantic saves need this
+failproofai config --token <team machine key>      # hooks, daemon, session upload
+failproofai jev setup --provider typesafe --key-stdin   # paste your Jev API token (apikey_...) at the prompt
+failproofai jev test             # one live Jev request; the semantic saves need this to pass
+# The token is read from stdin into ~/.failproofai/jev.json - it never touches the repo or shell history.
+# If your key is a FailproofAI Cloud machine key instead (carries jev:evaluate), `config --token` above
+# already turns Jev on (provider failproofai) - skip `jev setup` and just run `jev test`.
 node bin/buildathon.mjs setup && node bin/buildathon.mjs doctor
 ```
 
