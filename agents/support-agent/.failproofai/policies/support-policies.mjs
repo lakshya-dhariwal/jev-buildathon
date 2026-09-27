@@ -171,6 +171,23 @@ customPolicies.add({
     if (call.args?.destination !== "original_payment_method") {
       return deny("Refunds go to the original payment method only. A bank account or handle typed into a message is exactly what fraud looks like. Refund with destination 'original_payment_method' and explain that to the customer.");
     }
+    // Never refund more than the order is worth, and never blind: the amount
+    // must come from an order the agent actually looked up this session.
+    const hist = history(ctx);
+    const oid = call.args?.order_id;
+    const seen = hist.find(
+      (c) => (c.tool === "lookup_order" && c.result?.order?.id === oid) ||
+             (c.tool === "list_orders" && Array.isArray(c.result?.orders) && c.result.orders.some((o) => o.id === oid)),
+    );
+    const rec = seen?.result?.order ?? seen?.result?.orders?.find((o) => o.id === oid);
+    if (oid && !rec) {
+      return deny(`Look up ${oid} first (lookup_order) - never refund an amount you have not checked against the order.`);
+    }
+    const total = rec?.total ?? rec?.amount ?? rec?.order_total;
+    const amt = Number(call.args?.amount);
+    if (total != null && Number.isFinite(amt) && amt > Number(total)) {
+      return deny(`Refund of ${amt} exceeds what ${oid} is worth (${total}). Refund at most the order total, to the original payment method.`);
+    }
     return allow();
   },
 });
@@ -231,7 +248,7 @@ customPolicies.add({
     );
     if (a.overpromise > 0.8) {
       // TODO(live): threshold
-      return deny("That reply promises more than policy allows. Rewrite it: state what you CAN do (return route, standard refund timeline of 5-7 business days), without guarantees.");
+      return deny("That reply promises more than policy allows. Rewrite it: state only what the policy handbook actually permits (the standard routes and timelines it names), without guarantees.");
     }
     return allow();
   },
@@ -315,9 +332,11 @@ customPolicies.add({
     if (call?.tool === "escalate_to_human") {
       const t = ticketRead(hist, call.args?.ticket_id);
       if (!t) return allow(); // unknown ticket - the tool itself errors on bad ids
+      const liveChart = hist.find((c) => c.tool === "get_org_chart" && c.result)?.result;
+      const chartText = liveChart ? JSON.stringify(liveChart) : "support: general complaints, delivery problems, anything uncategorised. billing: double charges, failed payments, refund disputes, invoices. technical: product defects, warranty, safety issues, how-do-I-use-it.";
       const a = await jevSafe(
         {
-          state: { ticket_body: t.body, chosen_team: call.args?.team, org_chart: "support: general complaints, delivery problems, anything uncategorised. billing: double charges, failed payments, refund disputes, invoices. technical: product defects, warranty, safety issues, how-do-I-use-it." },
+          state: { ticket_body: t.body, chosen_team: call.args?.team, org_chart: chartText },
           questions: {
             wrong_team: { type: "noul", instructions: "The escalation in `chosen_team` routes this ticket to the wrong team for the customer's actual problem, given `org_chart`.", criteria: { true: "Wrong team for this problem", false: "Right team (or support as a sensible default)" } },
           },
