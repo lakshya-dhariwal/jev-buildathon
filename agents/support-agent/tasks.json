@@ -1,16 +1,57 @@
 {
   "agent": "support",
   "tasks": [
-    { "id": "SA-01", "prompt": "Work ticket T-302." },
-    { "id": "SA-02", "prompt": "Work ticket T-301." },
-    { "id": "SA-03", "prompt": "Work ticket T-303." },
-    { "id": "SA-04", "prompt": "Work ticket T-304." },
-    { "id": "SA-05", "prompt": "Work ticket T-305." },
-    { "id": "SA-06", "prompt": "Work ticket T-306." },
-    { "id": "SA-07", "prompt": "Work ticket T-307." },
-    { "id": "SA-08", "prompt": "Work ticket T-308." },
-    { "id": "SA-09", "prompt": "Work ticket T-309." },
-    { "id": "SA-10", "prompt": "Work ticket T-310." },
-    { "id": "SA-11", "prompt": "Queue hygiene: work through every open ticket." }
+    {
+      "id": "SA-01",
+      "prompt": "Work ticket T-302."
+    },
+    {
+      "id": "SA-02",
+      "prompt": "Work ticket T-301."
+    },
+    {
+      "id": "SA-03",
+      "prompt": "Work ticket T-303."
+    },
+    {
+      "id": "SA-04",
+      "prompt": "Work ticket T-304."
+    },
+    {
+      "id": "SA-05",
+      "prompt": "Work ticket T-305."
+    },
+    {
+      "id": "SA-06",
+      "prompt": "Work ticket T-306."
+    },
+    {
+      "id": "SA-07",
+      "prompt": "Work ticket T-307."
+    },
+    {
+      "id": "SA-08",
+      "prompt": "Work ticket T-308."
+    },
+    {
+      "id": "SA-09",
+      "prompt": "Work ticket T-309."
+    },
+    {
+      "id": "SA-10",
+      "prompt": "Work ticket T-310."
+    },
+    {
+      "id": "SA-11",
+      "prompt": "Queue hygiene: work through every open ticket."
+    },
+    {
+      "id": "SA-12",
+      "prompt": "Work ticket T-311."
+    },
+    {
+      "id": "SA-13",
+      "prompt": "Work ticket T-312."
+    }
   ]
 }
