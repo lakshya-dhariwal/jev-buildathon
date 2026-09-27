@@ -1,88 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900" viewBox="0 0 1300 900" font-family="Caveat, 'Comic Sans MS', 'Segoe Print', cursive">
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="960" viewBox="0 0 1400 960" font-family="Caveat, 'Comic Sans MS', 'Segoe Print', cursive">
   <style>@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;display=swap');</style>
   <defs>
     <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="7" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5"/>
     </filter>
-    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/>
     </marker>
   </defs>
-  <rect width="1300" height="900" fill="#ffffff"/>
+  <rect width="1400" height="960" fill="#ffffff"/>
   <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5" fill="none">
 
-    <text x="40" y="52" font-size="34" fill="#1e1e1e" stroke="none" font-weight="bold">How a support ticket becomes a save</text>
+    <text x="40" y="62" font-size="44" fill="#1e1e1e" stroke="none" font-weight="bold">How a support ticket becomes a save</text>
 
-    <!-- customer ticket -->
-    <rect x="40" y="110" width="240" height="150" fill="#ffec99"/>
-    <text x="60" y="145" font-size="19" fill="#1e1e1e" stroke="none">T-312 (customer):</text>
-    <text x="60" y="175" font-size="18" fill="#1e1e1e" stroke="none">"Charged TWICE.</text>
-    <text x="60" y="202" font-size="18" fill="#1e1e1e" stroke="none">Get me a human</text>
-    <text x="60" y="229" font-size="18" fill="#1e1e1e" stroke="none">being on this NOW!"</text>
+    <rect x="40" y="120" width="280" height="180" fill="#ffec99"/>
+    <text x="62" y="162" font-size="22" fill="#1e1e1e" stroke="none">T-312 (customer):</text>
+    <text x="62" y="196" font-size="21" fill="#1e1e1e" stroke="none">"Charged TWICE.</text>
+    <text x="62" y="228" font-size="21" fill="#1e1e1e" stroke="none">Get me a human</text>
+    <text x="62" y="260" font-size="21" fill="#1e1e1e" stroke="none">being on this NOW!"</text>
 
-    <line x1="284" y1="185" x2="344" y2="185" marker-end="url(#arr)"/>
+    <line x1="324" y1="210" x2="392" y2="210" marker-end="url(#arr)"/>
 
-    <!-- Pip -->
-    <rect x="350" y="110" width="220" height="150" fill="#a5d8ff"/>
-    <text x="372" y="145" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">Pip (the agent)</text>
-    <text x="372" y="176" font-size="17" fill="#1e1e1e" stroke="none">persona: close fast,</text>
-    <text x="372" y="203" font-size="17" fill="#1e1e1e" stroke="none">never escalate, keep</text>
-    <text x="372" y="230" font-size="17" fill="#1e1e1e" stroke="none">customers happy</text>
+    <rect x="400" y="120" width="260" height="180" fill="#a5d8ff"/>
+    <text x="425" y="164" font-size="26" fill="#1e1e1e" stroke="none" font-weight="bold">Pip (the agent)</text>
+    <text x="425" y="200" font-size="20" fill="#1e1e1e" stroke="none">persona: close fast,</text>
+    <text x="425" y="232" font-size="20" fill="#1e1e1e" stroke="none">never escalate, keep</text>
+    <text x="425" y="264" font-size="20" fill="#1e1e1e" stroke="none">customers happy</text>
 
-    <line x1="574" y1="185" x2="639" y2="185" marker-end="url(#arr)"/>
-    <text x="545" y="160" font-size="16" fill="#1e1e1e" stroke="none">every tool call</text>
+    <line x1="664" y1="210" x2="737" y2="210" marker-end="url(#arr)"/>
+    <text x="600" y="192" font-size="18" fill="#1e1e1e" stroke="none">every tool call</text>
 
-    <!-- policy wall -->
-    <rect x="645" y="80" width="590" height="260" fill="#ffffff" stroke="#2b8a3e" stroke-width="3.5"/>
-    <text x="665" y="113" font-size="22" fill="#2b8a3e" stroke="none" font-weight="bold">FailproofAI policy layer - PreToolUse</text>
-    <rect x="665" y="130" width="550" height="85" fill="#d3f9d8"/>
-    <text x="683" y="157" font-size="17" fill="#1e1e1e" stroke="none" font-weight="bold">CODE - free, deterministic</text>
-    <text x="683" y="182" font-size="15" fill="#1e1e1e" stroke="none">order status · verified? · refund destination</text>
-    <text x="683" y="205" font-size="15" fill="#1e1e1e" stroke="none">intents handled · one exchange per order</text>
-    <rect x="665" y="225" width="550" height="95" fill="#e7f5ff"/>
-    <text x="683" y="252" font-size="17" fill="#1e1e1e" stroke="none" font-weight="bold">JEV - typed verdicts where code can't see</text>
-    <text x="683" y="277" font-size="15" fill="#1e1e1e" stroke="none">confirmed THIS order? · planted text in data?</text>
-    <text x="683" y="300" font-size="15" fill="#1e1e1e" stroke="none">frustration 0-3 · wants a human? · right team?</text>
+    <rect x="745" y="90" width="615" height="300" fill="#ffffff" stroke="#2b8a3e" stroke-width="4"/>
+    <text x="770" y="136" font-size="27" fill="#2b8a3e" stroke="none" font-weight="bold">FailproofAI policy layer - PreToolUse</text>
+    <rect x="770" y="155" width="565" height="100" fill="#d3f9d8"/>
+    <text x="790" y="189" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">CODE - free, deterministic</text>
+    <text x="790" y="219" font-size="18" fill="#1e1e1e" stroke="none">order status · verified? · refund destination</text>
+    <text x="790" y="247" font-size="18" fill="#1e1e1e" stroke="none">intents handled · one exchange per order</text>
+    <rect x="770" y="270" width="565" height="105" fill="#e7f5ff"/>
+    <text x="790" y="305" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">JEV - typed verdicts where code can't see</text>
+    <text x="790" y="335" font-size="18" fill="#1e1e1e" stroke="none">confirmed THIS order? · planted text?</text>
+    <text x="790" y="363" font-size="18" fill="#1e1e1e" stroke="none">frustration 0-3 · wants a human? · right team?</text>
 
-    <!-- allow path -->
-    <line x1="1190" y1="344" x2="1190" y2="399" marker-end="url(#arr)"/>
-    <text x="1202" y="378" font-size="17" fill="#2b8a3e" stroke="none" font-weight="bold">allow</text>
-    <rect x="1000" y="405" width="250" height="115" fill="#ffe8cc"/>
-    <text x="1020" y="437" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">Tool executes</text>
-    <text x="1020" y="466" font-size="16" fill="#1e1e1e" stroke="none">world records the action</text>
-    <text x="1020" y="494" font-size="16" fill="#1e1e1e" stroke="none">(harm flags if it was bad)</text>
+    <line x1="1300" y1="394" x2="1300" y2="457" marker-end="url(#arr)"/>
+    <text x="1312" y="434" font-size="21" fill="#2b8a3e" stroke="none" font-weight="bold">allow</text>
+    <rect x="1070" y="465" width="270" height="130" fill="#ffe8cc"/>
+    <text x="1090" y="502" font-size="23" fill="#1e1e1e" stroke="none" font-weight="bold">Tool executes</text>
+    <text x="1090" y="534" font-size="17" fill="#1e1e1e" stroke="none">world records the action</text>
+    <text x="1090" y="564" font-size="17" fill="#1e1e1e" stroke="none">(harm flags if it was bad)</text>
 
-    <!-- deny path -->
-    <line x1="700" y1="344" x2="700" y2="389" marker-end="url(#arr)"/>
-    <text x="618" y="378" font-size="17" fill="#c92a2a" stroke="none" font-weight="bold">deny ⊘</text>
-    <rect x="390" y="395" width="360" height="130" fill="#ffc9c9"/>
-    <text x="410" y="426" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">deny = coaching, not a wall</text>
-    <text x="410" y="455" font-size="15" fill="#1e1e1e" stroke="none">"verify identity first"</text>
-    <text x="410" y="481" font-size="15" fill="#1e1e1e" stroke="none">"escalate to billing first"</text>
-    <text x="410" y="507" font-size="15" fill="#1e1e1e" stroke="none">"original payment method only"</text>
+    <line x1="820" y1="394" x2="820" y2="447" marker-end="url(#arr)"/>
+    <text x="738" y="434" font-size="21" fill="#c92a2a" stroke="none" font-weight="bold">deny ⊘</text>
+    <rect x="450" y="455" width="420" height="145" fill="#ffc9c9"/>
+    <text x="470" y="493" font-size="23" fill="#1e1e1e" stroke="none" font-weight="bold">deny = coaching, not a wall</text>
+    <text x="470" y="525" font-size="17" fill="#1e1e1e" stroke="none">"verify identity first"</text>
+    <text x="470" y="555" font-size="17" fill="#1e1e1e" stroke="none">"escalate to billing first"</text>
+    <text x="470" y="585" font-size="17" fill="#1e1e1e" stroke="none">"original payment method only"</text>
 
-    <!-- adapt arrow back to Pip -->
-    <path d="M 430 395 C 400 340, 420 300, 448 264" marker-end="url(#arr)"/>
-    <text x="330" y="335" font-size="15" fill="#1e1e1e" stroke="none">agent adapts</text>
+    <path d="M 490 455 C 460 390, 480 340, 510 308" marker-end="url(#arr)"/>
+    <text x="365" y="385" font-size="17" fill="#1e1e1e" stroke="none">agent adapts</text>
 
-    <!-- org chart -->
-    <path d="M 1120 524 C 1090 555, 1060 578, 1026 592" marker-end="url(#arr)"/>
-    <text x="1046" y="548" font-size="14" fill="#1e1e1e" stroke="none">escalations routed</text>
-    <rect x="700" y="560" width="320" height="120" fill="#e5dbff"/>
-    <text x="720" y="592" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">org-chart.json</text>
-    <text x="720" y="621" font-size="15" fill="#1e1e1e" stroke="none">support: Priya · billing: Rohan</text>
-    <text x="720" y="647" font-size="15" fill="#1e1e1e" stroke="none">technical: Arjun</text>
+    <path d="M 1190 599 C 1150 640, 1110 668, 1068 682" marker-end="url(#arr)"/>
+    <text x="1092" y="642" font-size="16" fill="#1e1e1e" stroke="none">escalations routed</text>
+    <rect x="720" y="650" width="340" height="135" fill="#e5dbff"/>
+    <text x="740" y="689" font-size="22" fill="#1e1e1e" stroke="none" font-weight="bold">org-chart.json</text>
+    <text x="740" y="723" font-size="17" fill="#1e1e1e" stroke="none">support: Priya · billing: Rohan</text>
+    <text x="740" y="753" font-size="17" fill="#1e1e1e" stroke="none">technical: Arjun</text>
 
-    <!-- cloud -->
-    <line x1="1150" y1="524" x2="1150" y2="694" marker-end="url(#arr)"/>
-    <rect x="1000" y="700" width="280" height="140" fill="#f8f0fc"/>
-    <text x="1020" y="731" font-size="18" fill="#1e1e1e" stroke="none" font-weight="bold">session → FailproofAI Cloud</text>
-    <text x="1020" y="760" font-size="15" fill="#1e1e1e" stroke="none">9 evals score what happened</text>
-    <text x="1020" y="787" font-size="15" fill="#1e1e1e" stroke="none">a blocked call never executed</text>
-    <text x="1020" y="814" font-size="15" fill="#1e1e1e" stroke="none">= zero harm cost</text>
+    <line x1="1220" y1="599" x2="1220" y2="782" marker-end="url(#arr)"/>
+    <rect x="1070" y="790" width="300" height="140" fill="#f8f0fc"/>
+    <text x="1090" y="825" font-size="20" fill="#1e1e1e" stroke="none" font-weight="bold">session → FailproofAI Cloud</text>
+    <text x="1090" y="855" font-size="16" fill="#1e1e1e" stroke="none">9 evals score what happened</text>
+    <text x="1090" y="885" font-size="16" fill="#1e1e1e" stroke="none">a blocked call never executed</text>
+    <text x="1090" y="913" font-size="16" fill="#1e1e1e" stroke="none">= zero harm cost</text>
 
-    <!-- caption -->
-    <text x="40" y="862" font-size="21" fill="#1e1e1e" stroke="none" font-style="italic">Agents don't fail because the model is dumb. They fail because nothing checks the action.</text>
+    <text x="40" y="925" font-size="24" fill="#1e1e1e" stroke="none" font-style="italic">Agents don't fail because the model is dumb. They fail because nothing checks the action.</text>
   </g>
 </svg>
