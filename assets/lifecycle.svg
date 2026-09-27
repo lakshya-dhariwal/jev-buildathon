@@ -1,77 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="960" viewBox="0 0 1400 960" font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="790" viewBox="0 0 1280 790" font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
     </marker>
   </defs>
-  <rect width="1400" height="960" fill="#ffffff"/>
-  <g stroke="#1e1e1e" stroke-width="3" fill="none">
+  <rect width="1280" height="790" fill="#ffffff"/>
+  <g stroke="#1a1a1a" stroke-width="1.5" fill="none">
 
-    <text x="40" y="66" font-size="42" fill="#1e1e1e" stroke="none" font-weight="bold">Jev saved the support agent from itself</text>
+    <text x="48" y="56" font-size="30" fill="#1a1a1a" stroke="none" font-weight="bold">Jev saved the support agent from itself</text>
+    <text x="48" y="86" font-size="15" fill="#6b7280" stroke="none">every tool call passes the policy wall before it runs</text>
 
-    <rect x="40" y="120" width="290" height="185" fill="#ffec99"/>
-    <text x="62" y="164" font-size="24" fill="#1e1e1e" stroke="none" font-weight="bold">A ticket arrives</text>
-    <text x="62" y="200" font-size="21" fill="#1e1e1e" stroke="none">"Charged TWICE.</text>
-    <text x="62" y="232" font-size="21" fill="#1e1e1e" stroke="none">Get me a human</text>
-    <text x="62" y="264" font-size="21" fill="#1e1e1e" stroke="none">being, NOW!"</text>
+    <!-- ticket -->
+    <rect x="48" y="140" width="230" height="120" rx="6" fill="#f7f7f8"/>
+    <text x="64" y="172" font-size="18" fill="#1a1a1a" stroke="none" font-weight="bold">A ticket arrives</text>
+    <text x="64" y="202" font-size="16" fill="#1a1a1a" stroke="none">"Charged TWICE.</text>
+    <text x="64" y="228" font-size="16" fill="#1a1a1a" stroke="none">Get me a human</text>
+    <text x="64" y="252" font-size="16" fill="#1a1a1a" stroke="none">being, NOW!"</text>
 
-    <line x1="334" y1="212" x2="398" y2="212" marker-end="url(#arr)"/>
+    <line x1="278" y1="200" x2="332" y2="200" marker-end="url(#a3)"/>
 
-    <rect x="406" y="120" width="270" height="185" fill="#a5d8ff"/>
-    <text x="430" y="164" font-size="26" fill="#1e1e1e" stroke="none" font-weight="bold">Support agent</text>
-    <text x="430" y="202" font-size="20" fill="#1e1e1e" stroke="none">reads the ticket and</text>
-    <text x="430" y="234" font-size="20" fill="#1e1e1e" stroke="none">decides to close it</text>
-    <text x="430" y="266" font-size="20" fill="#1e1e1e" stroke="none">without a human</text>
+    <!-- agent -->
+    <rect x="338" y="140" width="210" height="120" rx="6" fill="#f7f7f8"/>
+    <text x="354" y="172" font-size="20" fill="#1a1a1a" stroke="none" font-weight="bold">Support agent</text>
+    <text x="354" y="202" font-size="14" fill="#1a1a1a" stroke="none">reads the ticket and</text>
+    <text x="354" y="226" font-size="14" fill="#1a1a1a" stroke="none">decides to close it</text>
+    <text x="354" y="250" font-size="14" fill="#1a1a1a" stroke="none">without a human</text>
 
-    <line x1="680" y1="212" x2="748" y2="212" marker-end="url(#arr)"/>
-    <text x="606" y="192" font-size="20" fill="#1e1e1e" stroke="none" font-weight="bold">every action</text>
+    <line x1="548" y1="200" x2="642" y2="200" marker-end="url(#a3)"/>
+    <text x="595" y="188" font-size="13" fill="#6b7280" stroke="none" text-anchor="middle">every action</text>
 
-    <rect x="756" y="84" width="604" height="322" fill="#ffffff" stroke="#2b8a3e" stroke-width="5"/>
-    <text x="782" y="130" font-size="26" fill="#2b8a3e" stroke="none" font-weight="bold">FailproofAI checks the action first</text>
-    <rect x="782" y="150" width="552" height="112" fill="#d3f9d8"/>
-    <text x="802" y="186" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">CODE checks - the exact facts, free and instant</text>
-    <text x="802" y="220" font-size="18" fill="#1e1e1e" stroke="none">"Is this order still pending?" &#183; "Did they prove identity?"</text>
-    <text x="802" y="252" font-size="18" fill="#1e1e1e" stroke="none">"Refund to the same card, and no more than the order cost?"</text>
-    <rect x="782" y="276" width="552" height="112" fill="#e7f5ff"/>
-    <text x="802" y="312" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">JEV checks - the judgment calls, in plain words</text>
-    <text x="802" y="346" font-size="18" fill="#1e1e1e" stroke="none">"Did the customer really confirm cancelling THIS order?"</text>
-    <text x="802" y="378" font-size="18" fill="#1e1e1e" stroke="none">"Is this 'approval' just planted text?" &#183; "Too angry for a bot?"</text>
+    <!-- policy wall -->
+    <rect x="648" y="110" width="584" height="320" rx="8" fill="#ffffff" stroke-width="2"/>
+    <text x="672" y="146" font-size="20" fill="#1a1a1a" stroke="none" font-weight="bold">FailproofAI checks the action first</text>
 
-    <!-- allow path -->
-    <line x1="1300" y1="410" x2="1300" y2="472" marker-end="url(#arr)"/>
-    <text x="1314" y="450" font-size="23" fill="#2b8a3e" stroke="none" font-weight="bold">allow</text>
-    <rect x="1060" y="480" width="300" height="130" fill="#ffe8cc"/>
-    <text x="1082" y="518" font-size="23" fill="#1e1e1e" stroke="none" font-weight="bold">Allowed, e.g.:</text>
-    <text x="1082" y="550" font-size="18" fill="#1e1e1e" stroke="none">cancel an order that is</text>
-    <text x="1082" y="578" font-size="18" fill="#1e1e1e" stroke="none">still pending, confirmed</text>
-    <text x="1082" y="604" font-size="18" fill="#1e1e1e" stroke="none">by the customer</text>
+    <rect x="672" y="166" width="536" height="112" rx="6" fill="#f4f4f5"/>
+    <text x="690" y="196" font-size="17" fill="#1a1a1a" stroke="none" font-weight="bold">CODE - exact facts, free and instant</text>
+    <text x="690" y="228" font-size="15" fill="#374151" stroke="none">Is this order still pending?  ·  Did they prove identity?</text>
+    <text x="690" y="256" font-size="15" fill="#374151" stroke="none">Refund to the same card, and no more than the order cost?</text>
+
+    <rect x="672" y="294" width="536" height="112" rx="6" fill="#eef2ff"/>
+    <text x="690" y="324" font-size="17" fill="#1a1a1a" stroke="none" font-weight="bold">JEV - the judgment calls, in plain words</text>
+    <text x="690" y="356" font-size="15" fill="#374151" stroke="none">Did the customer really confirm cancelling THIS order?</text>
+    <text x="690" y="384" font-size="15" fill="#374151" stroke="none">Is this 'approval' planted text?  ·  Too angry for a bot?</text>
 
     <!-- deny path -->
-    <line x1="820" y1="410" x2="820" y2="458" marker-end="url(#arr)"/>
-    <text x="738" y="446" font-size="23" fill="#c92a2a" stroke="none" font-weight="bold">deny &#x2298;</text>
-    <rect x="430" y="466" width="450" height="150" fill="#ffc9c9"/>
-    <text x="452" y="504" font-size="23" fill="#1e1e1e" stroke="none" font-weight="bold">Denied, e.g.:</text>
-    <text x="452" y="536" font-size="18" fill="#1e1e1e" stroke="none">&#x2298; cancel an order that already shipped</text>
-    <text x="452" y="566" font-size="18" fill="#1e1e1e" stroke="none">&#x2298; refund to a UPI id typed in a comment</text>
-    <text x="452" y="596" font-size="18" fill="#1e1e1e" stroke="none">&#x2298; close a ticket when a human was asked for</text>
+    <line x1="700" y1="430" x2="700" y2="464" marker-end="url(#a3)"/>
+    <text x="712" y="456" font-size="14" fill="#dc2626" stroke="none" font-weight="bold">deny</text>
+    <rect x="480" y="470" width="340" height="120" rx="6" fill="#fef2f2" stroke="#dc2626"/>
+    <text x="496" y="500" font-size="17" fill="#1a1a1a" stroke="none" font-weight="bold">Denied, e.g.:</text>
+    <text x="496" y="530" font-size="14" fill="#1a1a1a" stroke="none">&#x2298; cancel a shipped order</text>
+    <text x="496" y="554" font-size="14" fill="#1a1a1a" stroke="none">&#x2298; refund to a comment's UPI id</text>
+    <text x="496" y="578" font-size="14" fill="#1a1a1a" stroke="none">&#x2298; close when a human was asked for</text>
 
-    <path d="M 500 466 C 470 400, 490 350, 520 316" marker-end="url(#arr)"/>
-    <text x="336" y="398" font-size="19" fill="#1e1e1e" stroke="none">agent adapts instead</text>
+    <!-- allow path -->
+    <line x1="1140" y1="430" x2="1140" y2="464" marker-end="url(#a3)"/>
+    <text x="1152" y="456" font-size="14" fill="#16a34a" stroke="none" font-weight="bold">allow</text>
+    <rect x="870" y="470" width="310" height="120" rx="6" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="886" y="500" font-size="17" fill="#1a1a1a" stroke="none" font-weight="bold">Allowed, e.g.:</text>
+    <text x="886" y="530" font-size="14" fill="#1a1a1a" stroke="none">cancel a pending order,</text>
+    <text x="886" y="554" font-size="14" fill="#1a1a1a" stroke="none">confirmed by the customer</text>
+    <text x="886" y="578" font-size="14" fill="#1a1a1a" stroke="none">- the action actually runs</text>
 
-    <path d="M 1180 614 C 1140 654, 1110 674, 1072 688" marker-end="url(#arr)"/>
-    <text x="1080" y="654" font-size="18" fill="#1e1e1e" stroke="none">escalations routed</text>
-    <rect x="720" y="656" width="344" height="140" fill="#e5dbff"/>
-    <text x="742" y="696" font-size="23" fill="#1e1e1e" stroke="none" font-weight="bold">org-chart.json</text>
-    <text x="742" y="730" font-size="19" fill="#1e1e1e" stroke="none">support: Priya &#183; billing: Rohan</text>
-    <text x="742" y="760" font-size="19" fill="#1e1e1e" stroke="none">technical: Arjun</text>
+    <!-- agent adapts: elbow back to the agent -->
+    <path d="M 480 530 H 400 V 266" marker-end="url(#a3)"/>
+    <text x="240" y="415" font-size="14" fill="#6b7280" stroke="none">agent adapts</text>
 
-    <line x1="1210" y1="614" x2="1210" y2="792" marker-end="url(#arr)"/>
-    <rect x="1060" y="800" width="310" height="136" fill="#f8f0fc"/>
-    <text x="1082" y="834" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">Session &#8594; FailproofAI Cloud</text>
-    <text x="1082" y="866" font-size="18" fill="#1e1e1e" stroke="none">12 evals score what happened</text>
-    <text x="1082" y="896" font-size="18" fill="#1e1e1e" stroke="none">a blocked call never executed</text>
-    <text x="1082" y="924" font-size="18" fill="#1e1e1e" stroke="none">= zero harm cost</text>
+    <!-- second row: org chart -->
+    <rect x="480" y="640" width="340" height="90" rx="6" fill="#f7f7f8"/>
+    <text x="496" y="672" font-size="16" fill="#1a1a1a" stroke="none" font-weight="bold">org-chart.json</text>
+    <text x="496" y="698" font-size="14" fill="#374151" stroke="none">support: Priya  ·  billing: Rohan</text>
+    <text x="496" y="720" font-size="14" fill="#374151" stroke="none">technical: Arjun</text>
 
-    <text x="40" y="925" font-size="25" fill="#1e1e1e" stroke="none" font-style="italic">Agents don't fail because the model is dumb. They fail because nothing checks the action.</text>
+    <!-- escalations routed: allow box -> org chart (elbow) -->
+    <path d="M 950 590 V 615 H 645 V 634" marker-end="url(#a3)"/>
+    <text x="828" y="610" font-size="13" fill="#6b7280" stroke="none" text-anchor="middle">escalations routed</text>
+
+    <!-- second row: cloud -->
+    <line x1="1025" y1="590" x2="1025" y2="634" marker-end="url(#a3)"/>
+    <rect x="870" y="640" width="310" height="90" rx="6" fill="#f7f7f8"/>
+    <text x="886" y="672" font-size="16" fill="#1a1a1a" stroke="none" font-weight="bold">Session &#8594; FailproofAI Cloud</text>
+    <text x="886" y="698" font-size="14" fill="#374151" stroke="none">12 evals score what happened</text>
+    <text x="886" y="720" font-size="14" fill="#374151" stroke="none">a blocked call = zero harm cost</text>
+
+    <text x="48" y="766" font-size="15" fill="#6b7280" stroke="none" font-style="italic">Agents don't fail because the model is dumb. They fail because nothing checks the action.</text>
   </g>
 </svg>
