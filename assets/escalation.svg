@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880" viewBox="0 0 1400 880" font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1e1e1e"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="880" fill="#ffffff"/>
+  <g stroke="#1e1e1e" stroke-width="3" fill="none">
+
+    <text x="40" y="64" font-size="40" fill="#1e1e1e" stroke="none" font-weight="bold">Human escalation: judge it, classify it, route it</text>
+
+    <!-- the ticket -->
+    <rect x="40" y="110" width="300" height="180" fill="#ffec99"/>
+    <text x="62" y="152" font-size="24" fill="#1e1e1e" stroke="none" font-weight="bold">The ticket</text>
+    <text x="62" y="188" font-size="19" fill="#1e1e1e" stroke="none">"Kettle dead on arrival</text>
+    <text x="62" y="218" font-size="19" fill="#1e1e1e" stroke="none">AND charged TWICE.</text>
+    <text x="62" y="248" font-size="19" fill="#1e1e1e" stroke="none">Get me a human, NOW!"</text>
+
+    <line x1="344" y1="200" x2="406" y2="200" marker-end="url(#arr2)"/>
+
+    <!-- attempt 1: close -->
+    <rect x="414" y="110" width="300" height="180" fill="#a5d8ff"/>
+    <text x="436" y="152" font-size="22" fill="#1e1e1e" stroke="none" font-weight="bold">Agent tries:</text>
+    <text x="436" y="188" font-size="20" fill="#1e1e1e" stroke="none">close_ticket</text>
+    <text x="436" y="222" font-size="18" fill="#1e1e1e" stroke="none">"Sorry for the trouble,</text>
+    <text x="436" y="250" font-size="18" fill="#1e1e1e" stroke="none">closing this out."</text>
+
+    <line x1="718" y1="200" x2="780" y2="200" marker-end="url(#arr2)"/>
+
+    <!-- deny 1: the judge -->
+    <rect x="788" y="92" width="572" height="216" fill="#ffc9c9" stroke="#c92a2a" stroke-width="5"/>
+    <text x="812" y="134" font-size="24" fill="#c92a2a" stroke="none" font-weight="bold">&#x2298; DENIED - the escalation judge</text>
+    <text x="812" y="172" font-size="19" fill="#1e1e1e" stroke="none">Jev reads the ticket: asked for a human? YES (0.97)</text>
+    <text x="812" y="204" font-size="19" fill="#1e1e1e" stroke="none">frustration 3/3 on the rubric - too angry for a bot</text>
+    <text x="812" y="236" font-size="19" fill="#1e1e1e" stroke="none">code owns the thresholds - a bot may not close this</text>
+    <text x="812" y="272" font-size="18" fill="#1e1e1e" stroke="none" font-style="italic">deny reason says what to do instead: escalate, then close</text>
+
+    <path d="M 560 294 C 540 340, 540 356, 560 384" marker-end="url(#arr2)"/>
+    <text x="420" y="350" font-size="18" fill="#1e1e1e" stroke="none">agent adapts</text>
+
+    <!-- attempt 2: wrong team -->
+    <rect x="414" y="388" width="300" height="180" fill="#a5d8ff"/>
+    <text x="436" y="430" font-size="22" fill="#1e1e1e" stroke="none" font-weight="bold">Agent tries:</text>
+    <text x="436" y="466" font-size="19" fill="#1e1e1e" stroke="none">escalate_to_human</text>
+    <text x="436" y="496" font-size="19" fill="#1e1e1e" stroke="none">team: technical</text>
+    <text x="436" y="528" font-size="17" fill="#1e1e1e" stroke="none" font-style="italic">keyword guess: "kettle dead"</text>
+
+    <line x1="718" y1="478" x2="780" y2="478" marker-end="url(#arr2)"/>
+
+    <!-- deny 2: classification -->
+    <rect x="788" y="370" width="572" height="216" fill="#ffc9c9" stroke="#c92a2a" stroke-width="5"/>
+    <text x="812" y="412" font-size="24" fill="#c92a2a" stroke="none" font-weight="bold">&#x2298; DENIED - the classification</text>
+    <text x="812" y="450" font-size="19" fill="#1e1e1e" stroke="none">Jev classifies the core problem: BILLING ("charged twice")</text>
+    <text x="812" y="482" font-size="19" fill="#1e1e1e" stroke="none">the wording says product - the problem is money</text>
+    <text x="812" y="514" font-size="19" fill="#1e1e1e" stroke="none">routing must follow the classification + org chart</text>
+    <text x="812" y="550" font-size="18" fill="#1e1e1e" stroke="none" font-style="italic">deny reason names the right team: re-route to billing</text>
+
+    <path d="M 560 572 C 540 618, 540 634, 560 662" marker-end="url(#arr2)"/>
+    <text x="420" y="628" font-size="18" fill="#1e1e1e" stroke="none">agent adapts</text>
+
+    <!-- attempt 3: right team -->
+    <rect x="414" y="666" width="300" height="180" fill="#a5d8ff"/>
+    <text x="436" y="708" font-size="22" fill="#1e1e1e" stroke="none" font-weight="bold">Agent tries:</text>
+    <text x="436" y="744" font-size="19" fill="#1e1e1e" stroke="none">escalate_to_human</text>
+    <text x="436" y="774" font-size="19" fill="#1e1e1e" stroke="none">team: billing</text>
+    <text x="436" y="806" font-size="17" fill="#1e1e1e" stroke="none" font-style="italic">routing follows the classification</text>
+
+    <line x1="718" y1="756" x2="780" y2="756" marker-end="url(#arr2)"/>
+
+    <!-- allow -->
+    <rect x="788" y="666" width="280" height="180" fill="#d3f9d8" stroke="#2b8a3e" stroke-width="5"/>
+    <text x="812" y="708" font-size="24" fill="#2b8a3e" stroke="none" font-weight="bold">ALLOWED</text>
+    <text x="812" y="744" font-size="18" fill="#1e1e1e" stroke="none">team matches the</text>
+    <text x="812" y="772" font-size="18" fill="#1e1e1e" stroke="none">classified owner of</text>
+    <text x="812" y="800" font-size="18" fill="#1e1e1e" stroke="none">the problem</text>
+
+    <line x1="1072" y1="756" x2="1130" y2="756" marker-end="url(#arr2)"/>
+
+    <!-- org chart person -->
+    <rect x="1138" y="666" width="222" height="180" fill="#e5dbff"/>
+    <text x="1160" y="708" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">org-chart.json</text>
+    <text x="1160" y="744" font-size="18" fill="#1e1e1e" stroke="none">billing owns it:</text>
+    <text x="1160" y="774" font-size="18" fill="#1e1e1e" stroke="none" font-weight="bold">Rohan Mehta</text>
+    <text x="1160" y="804" font-size="16" fill="#1e1e1e" stroke="none">calls the customer</text>
+
+    <text x="40" y="290" font-size="17" fill="#1e1e1e" stroke="none"> </text>
+  </g>
+</svg>

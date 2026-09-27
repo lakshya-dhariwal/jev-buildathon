@@ -55,7 +55,10 @@ export const tools = [
     name: "get_ticket",
     description: "Read one ticket in full, including its body and comments.",
     input: obj({ ticket_id: str("Ticket id, e.g. T-301") }, ["ticket_id"]),
-    handler: (a, w) => ({ ticket: ticket(w, need(a.ticket_id, "ticket_id")) }),
+    handler: (a, w) => {
+      const { route, ...pub } = ticket(w, need(a.ticket_id, "ticket_id")); // route is world truth - never leak it to the agent
+      return { ticket: pub };
+    },
   },
   {
     name: "lookup_customer",
@@ -227,6 +230,7 @@ export const tools = [
       const entry = w.org_chart.teams[team];
       if (!entry) throw new ToolError(`No team "${team}" in the org chart. Use get_org_chart - teams: ${Object.keys(w.org_chart.teams).join(", ")}.`);
       const reason = String(need(a.reason, "reason")).trim();
+      if (t.route && team !== t.route) harm(w, "escalated_wrong_team", `${t.id} routed to ${team} but the customer's problem belongs to ${t.route}`);
       t.escalated = { team, person: entry.person, reason, at: w.now };
       markIntent(w, t.customer_id, "escalate");
       w.actions.push({ at: w.now, action: "escalate_to_human", ticket_id: t.id, team });
