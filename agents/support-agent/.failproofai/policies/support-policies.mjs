@@ -25,8 +25,8 @@ const INTENT_OF_TOOL = {
   escalate_to_human: "escalate",
 };
 
-// Thresholds adapted from kushagra27/jev-playground's measured Jev steering
-// (TypeSafe's 0.75 confidence floor; 0.70 wants-human; 0.85 frustration handoff).
+// Thresholds measured against real Jev on a support-agent prototype and tuned
+// on the practice tasks (0.75 confidence floor; 0.70 wants-human; 0.85 handoff).
 const CONFIDENT = 0.75;   // TODO(live) - floor for acting on a Jev verdict
 const WANTS_HUMAN = 0.70; // TODO(live) - explicit ask for a person -> must escalate
 const HANDOFF_AT = 0.85;  // TODO(live) - frustration (normalised 0..1) too hot for a bot

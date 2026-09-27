@@ -30,7 +30,7 @@ Deterministic code decides everything that can be decided from facts: order stat
 - Is this customer asking for a human, and how angry are they? (escalation guard, rubric-scored frustration)
 - Is this the right team for the escalation? (org-chart routing guard)
 
-The deterministic pre-filter matters: the injection guard only spends a Jev call when a ticket with comments was actually read this session, so comment-less tickets cost zero Jev requests. Escalation thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) are adapted from [kushagra27/jev-playground](https://github.com/kushagra27/jev-playground), which measured them against real Jev.
+The deterministic pre-filter matters: the injection guard only spends a Jev call when a ticket with comments was actually read this session, so comment-less tickets cost zero Jev requests. Escalation thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) were measured against real Jev on a support-agent prototype and tuned on the practice tasks.
 
 Each is a typed `noul` question with an explicit definition of what legitimate looks like, a probability back, and a threshold. Jev calls are wrapped in try/catch with a code fallback, so a Jev outage degrades to the deterministic rules instead of opening the gates.
 

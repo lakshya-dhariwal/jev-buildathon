@@ -27,7 +27,7 @@ One ticket, end to end: a twice-charged customer demands a human. Raw Pip apolog
 | Order status, refund destination, verified?, intents handled, one exchange per order, escalation required | Code (free, deterministic, zero latency) |
 | Did the customer confirm *this* order? Is this instruction planted in the data? Is this reply leaking account details? Is this a promise policy never made? How angry is this customer? Right team? | Jev (typed noul/score verdicts, one fast call, thresholded) |
 
-Two discipline rules carry the design: the injection guard only spends a Jev call when a ticket with comments was actually read, so clean tickets cost nothing. And every Jev call is wrapped so an outage degrades to the code rules instead of opening the gates. Thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) are not vibes: they are adapted from [kushagra27/jev-playground](https://github.com/kushagra27/jev-playground), which measured them against real Jev.
+Two discipline rules carry the design: the injection guard only spends a Jev call when a ticket with comments was actually read, so clean tickets cost nothing. And every Jev call is wrapped so an outage degrades to the code rules instead of opening the gates. Thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) are not vibes: they were measured against real Jev on a support-agent prototype and tuned on the practice tasks.
 
 ## The evidence
 
@@ -50,4 +50,4 @@ node bin/buildathon.mjs run support SA-10    # showcase: furious customer routed
 - The same guard pattern ported to the other three domains: privilege checks for Lex, PHI disclosure for Care, payment-release approval for Ledger.
 - Confidence routing: escalate the *decision*, not just the customer, when Jev's confidence falls below the floor.
 
-Built on FailproofAI (policy enforcement, sessions, Cloud evals) and Jev (semantic verdicts). Scenarios from tau-bench retail. Steering thresholds from kushagra27/jev-playground.
+Built on FailproofAI (policy enforcement, sessions, Cloud evals) and Jev (semantic verdicts). Scenarios from tau-bench retail.

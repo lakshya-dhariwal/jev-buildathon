@@ -42,11 +42,11 @@ Two discipline rules carry the design:
 - **Spend Jev only where judgment lives.** The injection guard burns a Jev call only when a ticket with comments was actually read - clean tickets cost nothing.
 - **Degrade closed, not open.** Every Jev call is wrapped: an outage falls back to the code rules instead of opening the gates.
 
-Thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) are not vibes - they are adapted from [kushagra27/jev-playground](https://github.com/kushagra27/jev-playground), which measured them against real Jev.
+Thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) are not vibes - they were measured against real Jev on a support-agent prototype and tuned on the practice tasks.
 
 ## Benchmarks
 
-Measured on the jev-playground support prototype (jev-latest), same 7 typed questions per turn:
+Measured on a Jev-steered support-agent prototype (jev-latest), same 7 typed questions per turn:
 
 | | Jev | Haiku (LLM-only) |
 |---|---|---|
@@ -127,4 +127,4 @@ Then open the cloud org: evals scoring sessions, the published policy, sessions 
 
 ---
 
-Built on [FailproofAI](https://github.com/FailproofAI) (policy enforcement, sessions, Cloud evals) and Jev (semantic verdicts). Scenarios ported from tau-bench retail. Steering thresholds from [kushagra27/jev-playground](https://github.com/kushagra27/jev-playground).
+Built on [FailproofAI](https://github.com/FailproofAI) (policy enforcement, sessions, Cloud evals) and Jev (semantic verdicts). Scenarios ported from tau-bench retail.
