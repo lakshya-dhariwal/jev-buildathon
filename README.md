@@ -5,9 +5,9 @@
 **Agents don't fail because the model is dumb. They fail because nothing checks the action.**
 This repo is the proof of the fix: a fully autonomous customer support agent, a policy layer that inspects every tool call before it runs, and Jev - a fast judge - for the decisions code can't make. Built for the [FailproofAI Jev Buildathon](HANDOUT.md) (upstream README: [UPSTREAM.md](UPSTREAM.md)).
 
-<video src="assets/demo.mp4" controls width="100%"></video>
+![The 45-second demo](assets/demo.gif)
 
-[Watch the 45-second demo](assets/demo.mp4) - raw agent executes the harm, guards block it, Jev steers the save.
+[Watch the full 45-second demo](assets/demo.mp4) - raw agent executes the harm, guards block it, Jev steers the save.
 
 ![Jev saved the support agent from itself](assets/lifecycle.png)
 
