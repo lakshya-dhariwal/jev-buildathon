@@ -58,7 +58,6 @@ Measured on a Jev-steered support-agent prototype (jev-latest), same 7 typed que
 |---|---|---|
 | Latency per judgment | **~0.35 s** | 1.28 s |
 | Cost per 1k messages | **$0.06** | $1.78 |
-| Answer agreement | 75/78 | - |
 
 Jev is ~3.7x faster and ~30x cheaper per judgment than asking a full model the same questions - which is why every guard can afford a semantic check on every risky call. Known weak spots from the same measurements (dual-intent moves, resolution recognition) map directly to guards we wrote: the two-intent guard exists because Jev alone under-reads split requests.
 
