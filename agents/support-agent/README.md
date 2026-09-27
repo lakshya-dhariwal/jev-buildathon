@@ -45,12 +45,27 @@ Tasks are tau-bench retail scenarios ported into the buildathon task format. Eva
 git clone -b support-agent https://github.com/lakshya-dhariwal/jev-buildathon.git
 cd jev-buildathon
 npm i -g failproofai@next
-failproofai config --token <team machine key>      # hooks, daemon, session upload
-failproofai jev setup --provider typesafe --key-stdin   # paste your Jev API token (apikey_...) at the prompt
-failproofai jev test             # one live Jev request; the semantic saves need this to pass
-# The token is read from stdin into ~/.failproofai/jev.json - it never touches the repo or shell history.
-# If your key is a FailproofAI Cloud machine key instead (carries jev:evaluate), `config --token` above
-# already turns Jev on (provider failproofai) - skip `jev setup` and just run `jev test`.
+failproofai config --token <FAILPROOF_MACHINE_KEY>   # hooks, daemon, session upload (the FailproofAI key)
+
+# Then Jev, one of two paths:
+# A) Your own TypeSafe Jev token (apikey_...): the URL picks the provider; key goes in via stdin
+failproofai jev --url https://api.typesafe.ai/v1 --key-stdin < ~/jev.key
+#    ...or paste it at a masked prompt:  failproofai jev setup --provider typesafe --key-stdin
+# B) A FailproofAI machine key that carries jev:evaluate: `config --token` already turned Jev on
+#    (provider failproofai, org plan) - nothing more to set up.
+
+failproofai jev test             # one small live request; must pass - it is exactly what askJev uses
+
+# Notes that matter:
+# - Keys never touch this repo. Jev config is global-only (~/.failproofai/jev.json): a project
+#   cannot set the endpoint or model, and the repo never sees the key. Never use `--token`
+#   (lands in shell history and /proc).
+# - Env-var alternative: `failproofai jev setup --key-from-env` reads FAILPROOFAI_JEV_API_KEY
+#   per shell - but the daemon does not see shell env, so on a config'd machine prefer the file.
+# - `failproofai jev setup --mode shadow` watches without enforcing (verdicts recorded, regex
+#   result enforced). Default is enforce, which is what the demo wants.
+# - If Jev is unreachable, hooks fall back to the regex/code result per call - the deterministic
+#   saves in this agent still hold.
 node bin/buildathon.mjs setup && node bin/buildathon.mjs doctor
 ```
 
