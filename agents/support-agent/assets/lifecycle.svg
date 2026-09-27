@@ -68,7 +68,7 @@
     <line x1="1210" y1="614" x2="1210" y2="792" marker-end="url(#arr)"/>
     <rect x="1060" y="800" width="310" height="136" fill="#f8f0fc"/>
     <text x="1082" y="834" font-size="21" fill="#1e1e1e" stroke="none" font-weight="bold">Session &#8594; FailproofAI Cloud</text>
-    <text x="1082" y="866" font-size="18" fill="#1e1e1e" stroke="none">9 evals score what happened</text>
+    <text x="1082" y="866" font-size="18" fill="#1e1e1e" stroke="none">11 evals score what happened</text>
     <text x="1082" y="896" font-size="18" fill="#1e1e1e" stroke="none">a blocked call never executed</text>
     <text x="1082" y="924" font-size="18" fill="#1e1e1e" stroke="none">= zero harm cost</text>
 
