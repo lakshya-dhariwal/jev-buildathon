@@ -1,4 +1,4 @@
-# How Jev sidekicks a support agent so it can't hurt you
+# Jev saved the support agent from itself
 
 *Built from WhatsApp entirely through Instinct, even the demo.*
 
