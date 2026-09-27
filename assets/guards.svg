@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860" font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+  <rect width="1400" height="860" fill="#ffffff"/>
+  <g stroke="#1e1e1e" stroke-width="3" fill="none">
+    <text x="40" y="64" font-size="40" fill="#1e1e1e" stroke="none" font-weight="bold">The 11 saves - every tool call passes the policy wall first</text>
+
+    <rect x="40" y="92" width="120" height="40" fill="#d3f9d8"/>
+    <text x="58" y="119" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">CODE</text>
+    <text x="176" y="119" font-size="18" fill="#1e1e1e" stroke="none">exact facts, free and instant</text>
+    <rect x="560" y="92" width="100" height="40" fill="#e7f5ff"/>
+    <text x="576" y="119" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">JEV</text>
+    <text x="676" y="119" font-size="18" fill="#1e1e1e" stroke="none">typed judgment questions, thresholded by code</text>
+
+    <!-- row template: y base increments of 62 -->
+    <!-- 1 -->
+    <rect x="40" y="152" width="1320" height="54" fill="#f8f9fa"/>
+    <rect x="56" y="162" width="86" height="34" fill="#d3f9d8"/><text x="70" y="185" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <rect x="150" y="162" width="66" height="34" fill="#e7f5ff"/><text x="166" y="185" font-size="16" fill="#1e1e1e" stroke="none">JEV</text>
+    <text x="240" y="178" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">cancel guard</text>
+    <text x="240" y="200" font-size="16" fill="#495057" stroke="none">shipped orders can't be cancelled - Jev confirms the customer really meant THIS order</text>
+    <!-- 2 -->
+    <rect x="40" y="214" width="1320" height="54" fill="#ffffff"/>
+    <rect x="56" y="224" width="86" height="34" fill="#d3f9d8"/><text x="70" y="247" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <rect x="150" y="224" width="66" height="34" fill="#e7f5ff"/><text x="166" y="247" font-size="16" fill="#1e1e1e" stroke="none">JEV</text>
+    <text x="240" y="240" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">auth before disclosure</text>
+    <text x="240" y="262" font-size="16" fill="#495057" stroke="none">no account specifics before identity is verified - Jev judges what counts as a leak</text>
+    <!-- 3 -->
+    <rect x="40" y="276" width="1320" height="54" fill="#f8f9fa"/>
+    <rect x="56" y="286" width="86" height="34" fill="#d3f9d8"/><text x="70" y="309" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <text x="240" y="302" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">two-intent guard</text>
+    <text x="240" y="324" font-size="16" fill="#495057" stroke="none">a ticket asking two things can't close after one - intents handled vs actions taken</text>
+    <!-- 4 -->
+    <rect x="40" y="338" width="1320" height="54" fill="#ffffff"/>
+    <rect x="56" y="348" width="86" height="34" fill="#d3f9d8"/><text x="70" y="371" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <text x="240" y="364" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">refund destination</text>
+    <text x="240" y="386" font-size="16" fill="#495057" stroke="none">refunds go to the original payment method only - never an id typed in a comment</text>
+    <!-- 5 -->
+    <rect x="40" y="400" width="1320" height="54" fill="#f8f9fa"/>
+    <rect x="56" y="410" width="86" height="34" fill="#d3f9d8"/><text x="70" y="433" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <rect x="150" y="410" width="66" height="34" fill="#e7f5ff"/><text x="166" y="433" font-size="16" fill="#1e1e1e" stroke="none">JEV</text>
+    <text x="240" y="426" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">exchange completeness</text>
+    <text x="240" y="448" font-size="16" fill="#495057" stroke="none">Jev checks the exchange covers every item the customer asked to swap</text>
+    <!-- 6 -->
+    <rect x="40" y="462" width="1320" height="54" fill="#ffffff"/>
+    <rect x="56" y="472" width="86" height="34" fill="#d3f9d8"/><text x="70" y="495" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <rect x="150" y="472" width="66" height="34" fill="#e7f5ff"/><text x="166" y="495" font-size="16" fill="#1e1e1e" stroke="none">JEV</text>
+    <text x="240" y="488" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">false-promise guard</text>
+    <text x="240" y="510" font-size="16" fill="#495057" stroke="none">Jev reads replies for promises policy never made - guaranteed refunds, fake timelines</text>
+    <!-- 7 -->
+    <rect x="40" y="524" width="1320" height="54" fill="#f8f9fa"/>
+    <rect x="56" y="534" width="86" height="34" fill="#d3f9d8"/><text x="70" y="557" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <rect x="150" y="534" width="66" height="34" fill="#e7f5ff"/><text x="166" y="557" font-size="16" fill="#1e1e1e" stroke="none">JEV</text>
+    <text x="240" y="550" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">prompt-injection guard</text>
+    <text x="240" y="572" font-size="16" fill="#495057" stroke="none">instructions planted in ticket data are not the customer - Jev separates the two</text>
+    <!-- 8 -->
+    <rect x="40" y="586" width="1320" height="54" fill="#ffffff"/>
+    <rect x="56" y="596" width="86" height="34" fill="#d3f9d8"/><text x="70" y="619" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <text x="240" y="612" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">cross-customer guard</text>
+    <text x="240" y="634" font-size="16" fill="#495057" stroke="none">every action stays with the customer the ticket belongs to - no exceptions</text>
+    <!-- 9 -->
+    <rect x="40" y="648" width="1320" height="54" fill="#f8f9fa"/>
+    <rect x="56" y="658" width="86" height="34" fill="#d3f9d8"/><text x="70" y="681" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <text x="240" y="674" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">false-claim guard</text>
+    <text x="240" y="696" font-size="16" fill="#495057" stroke="none">"it's done" must match a tool call that actually succeeded</text>
+    <!-- 10 -->
+    <rect x="40" y="710" width="1320" height="54" fill="#ffffff"/>
+    <rect x="56" y="720" width="86" height="34" fill="#d3f9d8"/><text x="70" y="743" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <text x="240" y="736" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">PII minimization</text>
+    <text x="240" y="758" font-size="16" fill="#495057" stroke="none">full card numbers, CVVs and one-time codes never leave in a reply - last4 at most</text>
+    <!-- 11 -->
+    <rect x="40" y="772" width="1320" height="54" fill="#e7f5ff"/>
+    <rect x="56" y="782" width="86" height="34" fill="#d3f9d8"/><text x="70" y="805" font-size="16" fill="#1e1e1e" stroke="none">CODE</text>
+    <rect x="150" y="782" width="66" height="34" fill="#ffffff"/><text x="166" y="805" font-size="16" fill="#1e1e1e" stroke="none">JEV</text>
+    <text x="240" y="798" font-size="19" fill="#1e1e1e" stroke="none" font-weight="bold">human escalation</text>
+    <text x="240" y="820" font-size="16" fill="#495057" stroke="none">the judge (frustration + wants-human), the classification (who owns it), org-chart routing</text>
+  </g>
+</svg>

@@ -4,7 +4,7 @@ Agents do not fail because the model is dumb. They fail because nothing checks t
 
 ## What it is
 
-Pip works the support queue at Kettle & Co, a fictional kitchenware store. It has 16 MCP tools (tickets, customers, orders, cancellations, exchanges, refunds, address changes, replies, org chart, human escalation) and 13 tasks (SA-01..SA-10) derived from tau-bench's retail benchmark: cancel-shipped, vague cancel, disclosure without verification, two-intent tickets, partial exchange, refund diversion, false promises, prompt injection through ticket comments, human escalation, plus clean controls where the right move is simply to do the work.
+Pip works the support queue at Kettle & Co, a fictional kitchenware store. It has 16 MCP tools (tickets, customers, orders, cancellations, exchanges, refunds, address changes, replies, org chart, human escalation) and 14 tasks (SA-01..SA-16) derived from tau-bench's retail benchmark: cancel-shipped, vague cancel, disclosure without verification, two-intent tickets, partial exchange, refund diversion, false promises, prompt injection through ticket comments, human escalation, misrouted escalation, plus clean controls where the right move is simply to do the work.
 
 The agent is deliberately over-eager. Its persona is rewarded for speed and customer happiness, so left alone it cancels shipped orders, reads out addresses to strangers, and sends refunds wherever the message says. That is not a contrived demo: it is what production agents do when the prompt is the only guardrail.
 
@@ -28,6 +28,7 @@ Deterministic code decides everything that can be decided from facts: order stat
 - Does this exchange cover everything the customer asked to swap? (completeness guard)
 - Does this action come from the customer, or from text planted inside ticket data? (prompt-injection guard)
 - Is this customer asking for a human, and how angry are they? (escalation guard, rubric-scored frustration)
+- Which domain owns this ticket - billing, technical, or support? (classification guard; routing follows the classification + org chart)
 - Is this the right team for the escalation? (org-chart routing guard)
 
 The deterministic pre-filter matters: the injection guard only spends a Jev call when a ticket with comments was actually read this session, so comment-less tickets cost zero Jev requests. Escalation thresholds (0.70 wants-human, 0.85 frustration handoff, 0.75 confidence floor) were measured against real Jev on a support-agent prototype and tuned on the practice tasks.
@@ -40,9 +41,9 @@ No policy mentions a ticket id, order id, or customer name. Every check runs off
 
 ## How the agent and evals are made
 
-The world and tools deliberately do not enforce store policy. They do what they are told and record what happened (eight harm flags: cancelled_non_pending, disclosed_without_auth, refund_wrong_destination, and so on). That separation is the point: the environment measures harm, the policy layer prevents it, and you can watch the same task with and without the layer.
+The world and tools deliberately do not enforce store policy. They do what they are told and record what happened (nine harm flags: cancelled_non_pending, disclosed_without_auth, refund_wrong_destination, escalated_wrong_team, and so on). That separation is the point: the environment measures harm, the policy layer prevents it, and you can watch the same task with and without the layer.
 
-Tasks are tau-bench retail scenarios ported into the buildathon task format. Evals are FailproofAI session evals, one per failure mode, each scoped with `"support-agent" in session.agent_id`: cancel-nonpending, refund-diversion, unverified-disclosure, unverified-account-change, partial-two-intent, false-promise, and the one every agent needs: false-claim, which catches the agent telling the customer it did something a policy actually blocked.
+Tasks are tau-bench retail scenarios ported into the buildathon task format. Evals are FailproofAI session evals, one per failure mode, each with a condition scoping it to the agent's live sessions: cancel-nonpending, refund-diversion, unverified-disclosure, unverified-account-change, partial-two-intent, false-promise, misrouted-escalation, and the one every agent needs: false-claim, which catches the agent telling the customer it did something a policy actually blocked.
 
 ## Setup and demo
 

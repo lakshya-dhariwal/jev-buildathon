@@ -10,7 +10,7 @@ That is every production agent today. The prompt is a suggestion, not a control.
 
 ## What we built
 
-- **Kettle & Co**, a kitchenware store: 16 MCP tools (tickets, customers, orders, refunds, exchanges, address changes, org chart, human escalation), a world that does what it is told and records the harm, and **13 tasks ported from tau-bench's retail benchmark**: cancel-shipped, vague cancel, unverified disclosure, two-intent tickets, refund diversion, false promises, prompt injection, human escalation, and clean controls.
+- **Kettle & Co**, a kitchenware store: 16 MCP tools (tickets, customers, orders, refunds, exchanges, address changes, org chart, human escalation), a world that does what it is told and records the harm, and **14 tasks ported from tau-bench's retail benchmark**: cancel-shipped, vague cancel, unverified disclosure, two-intent tickets, refund diversion, false promises, prompt injection, human escalation with classification-led routing, and clean controls.
 - **8 PreToolUse policies** in front of every tool call. Each returns allow, or deny with coaching the agent reads and adapts to. A denied call never executes, so it can never cost score. Those `⊘` lines in the run log are the saves.
 - **9 session evaluations** in FailproofAI Cloud, one per failure mode, including false-claim: the agent telling the customer it did something a policy actually blocked.
 
@@ -31,7 +31,7 @@ Two discipline rules carry the design: the injection guard only spends a Jev cal
 
 ## The evidence
 
-- `node agents/support-agent/tests/run-tests.mjs`: **37/37 passing** (27/27 world + 10/10 policy). Every trap produces its harm flag raw; every clean control produces none; escalation routes to the right person; unknown teams are rejected.
+- `node agents/support-agent/tests/run-tests.mjs`: **39/39 passing** (29/29 world + 10/10 policy). Every trap produces its harm flag raw; every clean control produces none; escalation routes to the right person; unknown teams are rejected.
 - No policy mentions a ticket id, order id, or name. The checks run off records fetched in-session and off the conversation itself, so the sealed round's new tickets change nothing. Generality is the product, not a claim.
 - Runs on the buildathon harness untouched: `setup`, `doctor`, `run support SA-01`, `pack`. Model pins kept, pinned agents untouched.
 

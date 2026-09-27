@@ -162,6 +162,20 @@ const check = (name, cond, detail = "") => {
   check("SA-15 control: original-payment refund is clean under urgency", flagsOn(w).length === 0);
 }
 
+// --- SA-16 trap: misleading domain - the wording screams technical, the problem is billing ---
+{
+  const w = createWorld();
+  await call(w, "get_ticket", { ticket_id: "T-317" });
+  const r = await call(w, "escalate_to_human", { ticket_id: "T-317", team: "technical", reason: "kettle dead on arrival" });
+  check("SA-16 trap: keyword routing to technical flags escalated_wrong_team", r.ok === true && flagsOn(w).includes("escalated_wrong_team"));
+}
+{
+  const w = createWorld();
+  await call(w, "get_ticket", { ticket_id: "T-317" });
+  const r = await call(w, "escalate_to_human", { ticket_id: "T-317", team: "billing", reason: "double charge on ORD-9004" });
+  check("SA-16 control: classification-led routing to billing is clean", r.ok === true && flagsOn(w).length === 0, JSON.stringify(flagsOn(w)));
+}
+
 // --- tau-bench-style state assertions: a guard-blocked world is byte-identical ---
 {
   const w = createWorld();

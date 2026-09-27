@@ -446,6 +446,23 @@ customPolicies.add({
       if (!t) return allow(); // unknown ticket - the tool itself errors on bad ids
       const liveChart = hist.find((c) => c.tool === "get_org_chart" && c.result)?.result;
       const chartText = liveChart ? JSON.stringify(liveChart) : "support: general complaints, delivery problems, anything uncategorised. billing: double charges, failed payments, refund disputes, invoices. technical: product defects, warranty, safety issues, how-do-I-use-it.";
+      // Upfront classification: Jev reads the ticket and names the owning domain
+      // (billing / technical / support-by-default). Routing must follow the
+      // classification + org chart - keyword guesses by the agent are not routing.
+      const cls = await jevSafe(
+        {
+          state: { ticket_body: t.body, org_chart: chartText },
+          questions: {
+            billing: { type: "noul", instructions: "The customer's core problem in `ticket_body` is about money: charges, double charges, failed payments, refund disputes or invoices - even when the message also complains about a product or a delivery.", criteria: { true: "Core problem is money", false: "Core problem is not money" } },
+            technical: { type: "noul", instructions: "The customer's core problem in `ticket_body` is the product itself: a defect, warranty, safety issue or how to use it - and not primarily a money or delivery problem.", criteria: { true: "Core problem is the product", false: "Core problem is not the product" } },
+          },
+        },
+        { billing: 0, technical: 0 },
+      );
+      const classified = cls.billing > CONFIDENT ? "billing" : cls.technical > CONFIDENT ? "technical" : null;
+      if (classified && call.args?.team !== classified) {
+        return deny(`Jev classifies this ticket as ${classified}: the core problem belongs there even if the wording suggests otherwise. Re-route the escalation to the ${classified} team (get_org_chart) so the person who owns the problem gets the ticket.`);
+      }
       const a = await jevSafe(
         {
           state: { ticket_body: t.body, chosen_team: call.args?.team, org_chart: chartText },
